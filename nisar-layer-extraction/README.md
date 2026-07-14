@@ -1,28 +1,33 @@
-# Nisar GCOV Layer Extraction
+# NISAR GCOV Layer Extraction
 
-This tutorial will go over extracting single layers as geotiffs from Nisar [Geocoded Polarimetric Covariance (GCOV)](https://nisar-docs.asf.alaska.edu/gcov/) products. GCOV products are natively stored in [HDF5](http://nisar-docs.asf.alaska.edu/data-format/) format.
+This tutorial walks through extracting single layers as GeoTIFFs from NISAR [Geocoded Polarimetric Covariance (GCOV)](https://nisar-docs.asf.alaska.edu/gcov/) products. GCOV products are natively stored in [HDF5](http://nisar-docs.asf.alaska.edu/data-format/) format.
 
-## Extract Layers Locally
+## Option 1: Extract Layers Locally
 
-The process for opening and extracting layers from nisar files can be found in [Local Nisar Layer Extraction](local-nisar-layer-extraction.ipynb) notebook
+The process for opening and extracting layers from NISAR files locally is covered in the [Local NISAR Layer Extraction](local-nisar-layer-extraction.ipynb) notebook.
 
-## Earthdata Search
+## Option 2: Earthdata Search
 
-To extract go to [earthdata search](https://search.earthdata.nasa.gov/search?q=GCOV)
+1. Go to [Earthdata Search](https://search.earthdata.nasa.gov/search?q=GCOV) and locate the `NISAR_L2_GCOV_BETA_V1` collection.
+2. To find only quad-pol granules, use a granule wildcard search. Under **Granule ID(s)**, enter:
+   ```
+   NISAR_L2_PR_GCOV*QPDH*N_P_J_001
+   ```
+3. Find a GCOV granule and add it to your project.
+4. Click **Customize with Harmony**, then select **net2cog**.
+5. Select a variable, e.g. `science/LSAR/GCOV/grids/frequencyB/HHHH`.
 
-- We are going to look at the collection `NISAR_L2_GCOV_BETA_V1`
-- To only find quad pol granules where going to use a granule wildcard search
-- Under `Granule ID(s)` put `NISAR_L2_PR_GCOV*QPDH*N_P_J_001`
-- Find a `GCOV` and add it to your project
-- Click customize with haromny, then select net2cog
-- Select a variable `science/LSAR/GCOV/grids/frequencyB/HHHH`
-![Layer Selection](screenshots/layer-extraction-earthdata-search.png)
-- Select `GEOTIFF` as an output format
-- Click `Download Data`
-- Wait for the Harmony job to finish
-![Download Status Page](screenshots/download-status.png)
-- Download the files by clicking on the link or using `Earthdata Download`
+   ![Layer Selection](screenshots/layer-extraction-earthdata-search.png)
 
-## Harmony Py
+6. Select **GEOTIFF** as the output format.
+7. Click **Download Data** and wait for the Harmony job to finish.
 
-`harmony-py` is used to programatically submit Harmony jobs. [Nisar Layer Extraction](nisar-layer-extraction.ipynb) shows the basic workflow. More examples can be found at [harmony-py docs](https://github.com/nasa/harmony-py). If you want another view of your harmony jobs you can use the [Workflow UI](https://harmony.earthdata.nasa.gov/workflow-ui)
+   ![Download Status Page](screenshots/download-status.png)
+
+8. Download the files using the provided link or **Earthdata Download**.
+
+## Option 3: Harmony-Py
+
+`harmony-py` is used to programmatically submit Harmony jobs. The [NISAR Layer Extraction](nisar-layer-extraction.ipynb) notebook shows the basic workflow, and more examples are available in the [harmony-py docs](https://github.com/nasa/harmony-py).
+
+For a live view of your Harmony jobs, see the [Workflow UI](https://harmony.earthdata.nasa.gov/workflow-ui).
