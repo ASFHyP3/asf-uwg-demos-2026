@@ -2,11 +2,11 @@
 
 This tutorial walks through extracting single layers as GeoTIFFs from NISAR [Geocoded Polarimetric Covariance (GCOV)](https://nisar-docs.asf.alaska.edu/gcov/) products. GCOV products are natively stored in [HDF5](http://nisar-docs.asf.alaska.edu/data-format/) format.
 
-## Option 1: Extract Layers Locally
+## Extract Layers Locally
 
 The process for opening and extracting layers from NISAR files locally is covered in the [Local NISAR Layer Extraction](local-nisar-layer-extraction.ipynb) notebook.
 
-## Option 2: Earthdata Search
+## Earthdata Search
 
 1. Go to [Earthdata Search](https://search.earthdata.nasa.gov/search?q=GCOV) and locate the `NISAR_L2_GCOV_BETA_V1` collection.
 2. To find only quad-pol granules, use a granule wildcard search. Under **Granule ID(s)**, enter:
@@ -26,7 +26,7 @@ The process for opening and extracting layers from NISAR files locally is covere
 
 8. Download the files using the provided link or **Earthdata Download**.
 
-## Option 3: Harmony-Py
+## Harmony-Py
 
 `harmony-py` is used to programmatically submit Harmony jobs. The [NISAR Layer Extraction](nisar-layer-extraction.ipynb) notebook shows the basic workflow, and more examples are available in the [harmony-py docs](https://github.com/nasa/harmony-py).
 
