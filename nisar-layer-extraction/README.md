@@ -1,11 +1,10 @@
 # Nisar GCOV Layer Extraction
 
-## Locally
+This tutorial will go over extracting single layers as geotiffs from Nisar [Geocoded Polarimetric Covariance (GCOV)](https://nisar-docs.asf.alaska.edu/gcov/) products. GCOV products are natively stored in [HDF5](http://nisar-docs.asf.alaska.edu/data-format/) format.
 
-Download a GCOV locally
-- use h5py to open the file
-- load the file into memory (numpy)
-- Save it to raster using gdal
+## Extract Layers Locally
+
+The process for opening and extracting layers from nisar files can be found in [Local Nisar Layer Extraction](local-nisar-layer-extraction.ipynb) notebook
 
 ## Earthdata Search
 
@@ -26,7 +25,4 @@ To extract go to [earthdata search](https://search.earthdata.nasa.gov/search?q=G
 
 ## Harmony Py
 
-harmony-py is used to programatically submit Harmony jobs
-
-```
-```
+`harmony-py` is used to programatically submit Harmony jobs. [Nisar Layer Extraction](nisar-layer-extraction.ipynb) shows the basic workflow. More examples can be found at [harmony-py docs](https://github.com/nasa/harmony-py). If you want another view of your harmony jobs you can use the [Workflow UI](https://harmony.earthdata.nasa.gov/workflow-ui)

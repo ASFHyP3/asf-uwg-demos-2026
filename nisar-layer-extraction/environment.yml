@@ -1,0 +1,9 @@
+name: nisar-layer-extraction
+channels:
+  - conda-forge
+dependencies:
+  - isce3-cpu
+  - gdal
+  - pip
+  - pip:
+    - -r requirements.txt
