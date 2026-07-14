@@ -2,6 +2,9 @@
 
 This tutorial walks through extracting single layers as GeoTIFFs from NISAR [Geocoded Polarimetric Covariance (GCOV)](https://nisar-docs.asf.alaska.edu/gcov/) products. GCOV products are natively stored in [HDF5](http://nisar-docs.asf.alaska.edu/data-format/) format.
 
+GCOV Layer extraction is the first step in creating a comprehensive suite of services for NISAR data.
+See the [ASF Roadmap](https://nisar-docs.asf.alaska.edu/roadmap/) for a timeline of upcoming services!
+
 ## Extract Layers Locally
 
 The process for opening and extracting layers from NISAR files locally is covered in the [Local NISAR Layer Extraction](local-nisar-layer-extraction.ipynb) notebook.
